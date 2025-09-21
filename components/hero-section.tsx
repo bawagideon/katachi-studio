@@ -42,7 +42,7 @@ export function HeroSection() {
   }
 
   return (
-    <section ref={containerRef} className="relative h-screen overflow-hidden">
+  <section ref={containerRef} className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen overflow-hidden flex flex-col justify-center">
       {/* Background Image with Cinematic Effects */}
       <motion.div
         className="absolute inset-0"
@@ -67,9 +67,9 @@ export function HeroSection() {
         className="relative z-10 h-full flex items-center justify-center"
         style={{ y: contentY, opacity: contentOpacity }}
       >
-        <div className="container-custom text-center text-white">
+  <div className="container-custom text-center text-white px-4 sm:px-6 md:px-8">
           <Reveal>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">
               <AnimatedText text="Design furniture for" delay={0.5} />
               <br />
               <span className="italic font-light">
@@ -80,7 +80,7 @@ export function HeroSection() {
 
           <Reveal delay={0.2}>
             <motion.p
-              className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-12 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -98,8 +98,8 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
-        <BlurPanel className="mx-6 mb-6 px-6 py-4 bg-black/24 backdrop-blur-md border-white/20">
-          <div className="flex items-center justify-center gap-6 text-white/90">
+  <BlurPanel className="mx-2 sm:mx-6 mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 bg-black/24 backdrop-blur-md border-white/20">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-white/90 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <PackageCheck className="w-4 h-4 text-green-400" />
               <span className="text-sm">Free shipping</span>

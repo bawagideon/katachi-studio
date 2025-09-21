@@ -29,28 +29,28 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="py-20 lg:py-32">
-      <div className="container-custom">
+    <section className="py-10 sm:py-16 md:py-20 lg:py-32">
+      <div className="container-custom px-4 sm:px-6 md:px-8">
         <Reveal>
           <div className="max-w-2xl mx-auto">
-            <BlurPanel className="p-8 lg:p-12 bg-white/40 backdrop-blur-md grain-texture">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
+            <BlurPanel className="p-4 sm:p-8 lg:p-12 bg-white/40 backdrop-blur-md grain-texture">
+              <div className="text-center mb-4 sm:mb-8">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-2 sm:mb-4">
                   <AnimatedText text="Stay ahead of " delay={0.2} />
                   <span className="italic font-light">
                     <AnimatedText text="quiet luxury." delay={0.5} />
                   </span>
                 </h2>
-                <p className="text-lg text-neutral-600">
+                <p className="text-base sm:text-lg text-neutral-600">
                   Be the first to discover new collections, design insights, and exclusive access to limited pieces.
                 </p>
               </div>
 
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <Mail size={20} className="text-neutral-400" />
+                    <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                      <Mail size={18} className="text-neutral-400" />
                     </div>
                     <input
                       type="email"
@@ -60,7 +60,7 @@ export function NewsletterSection() {
                         setIsValid(true)
                       }}
                       placeholder="Enter your email address"
-                      className={`w-full pl-12 pr-4 py-4 bg-white/60 backdrop-blur-sm border rounded-full text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition-all duration-200 ${
+                      className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/60 backdrop-blur-sm border rounded-full text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition-all duration-200 ${
                         !isValid ? "border-red-300 focus:ring-red-500" : "border-neutral-200"
                       }`}
                     />
@@ -79,7 +79,7 @@ export function NewsletterSection() {
 
                   <motion.button
                     type="submit"
-                    className="w-full bg-neutral-900 text-white py-4 rounded-full font-medium hover:bg-neutral-800 transition-all duration-200"
+                    className="w-full bg-neutral-900 text-white py-3 sm:py-4 rounded-full font-medium hover:bg-neutral-800 transition-all duration-200"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -88,25 +88,24 @@ export function NewsletterSection() {
                 </form>
               ) : (
                 <motion.div
-                  className="text-center py-8"
+                  className="text-center py-6 sm:py-8"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Check size={24} className="text-green-600" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Check size={20} className="sm:size-24 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-2">Welcome to Gideon B. Shops</h3>
-                  <p className="text-neutral-600">
-                    Thank you for subscribing. You'll receive our next newsletter with exclusive insights and new
-                    arrivals.
+                  <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 mb-1 sm:mb-2">Welcome to Gideon B. Shops</h3>
+                  <p className="text-neutral-600 text-sm sm:text-base">
+                    Thank you for subscribing. You'll receive our next newsletter with exclusive insights and new arrivals.
                   </p>
                 </motion.div>
               )}
 
-              <p className="text-xs text-neutral-500 text-center mt-6">
+              <p className="text-xs text-neutral-500 text-center mt-4 sm:mt-6">
                 We respect your privacy. Unsubscribe at any time. Read our{" "}
-                <a href="#" className="underline hover:text-neutral-700 transition-colors">
+                <a href="/privacy-policy" className="underline hover:text-neutral-700 transition-colors">
                   Privacy Policy
                 </a>
                 .

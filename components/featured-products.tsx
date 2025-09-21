@@ -81,22 +81,21 @@ export function FeaturedProducts() {
   }
 
   return (
-    <section className="py-20 lg:py-32" id="featured-products">
-      <div className="container-custom">
+  <section className="py-10 sm:py-16 md:py-20 lg:py-32" id="featured-products">
+  <div className="container-custom px-4 sm:px-6 md:px-8">
         <Reveal>
-          <div className="text-left mb-16">
-            <h2 className="text-4xl text-neutral-900 mb-4 lg:text-6xl">
+          <div className="text-left mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-4xl text-neutral-900 mb-2 sm:mb-4 lg:text-6xl">
               Featured <span className="italic font-light">Collection</span>
             </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl">
-              Discover our most beloved pieces, each crafted with meticulous attention to detail and timeless design
-              principles.
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl">
+              Discover our most beloved pieces, each crafted with meticulous attention to detail and timeless design principles.
             </p>
           </div>
         </Reveal>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           initial="hidden"
           animate="visible"
           variants={{

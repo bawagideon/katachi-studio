@@ -27,14 +27,14 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-center h-12 lg:h-16 relative">
+      <div className="container-custom px-4 sm:px-6 md:px-8">
+        <div className="flex items-center justify-center h-12 sm:h-14 lg:h-16 relative">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
             <a
-              href="#"
+              href="/"
               className={cn(
-                "text-xl lg:text-2xl font-bold tracking-tight transition-colors",
+                "text-lg sm:text-xl lg:text-2xl font-bold tracking-tight transition-colors",
                 isScrolled ? "text-neutral-900 hover:text-neutral-700" : "text-white hover:text-white/80",
               )}
               aria-label="Gideon B. Studio Home"

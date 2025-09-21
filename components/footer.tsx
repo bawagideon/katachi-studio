@@ -7,25 +7,25 @@ export function Footer() {
 
   const footerLinks = {
     Shop: [
-      { name: "New Arrivals", href: "#" },
-      { name: "Chairs", href: "#" },
-      { name: "Tables", href: "#" },
-      { name: "Storage", href: "#" },
-      { name: "Lighting", href: "#" },
+      { name: "New Arrivals", href: "/new-arrivals" },
+      { name: "Chairs", href: "/chairs" },
+      { name: "Tables", href: "/tables" },
+      { name: "Storage", href: "/storage" },
+      { name: "Lighting", href: "/lighting" },
     ],
     Company: [
-      { name: "About", href: "#" },
-      { name: "Craftsmanship", href: "#" },
-      { name: "Sustainability", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Press", href: "#" },
+      { name: "About", href: "/about" },
+      { name: "Craftsmanship", href: "/craftsmanship" },
+      { name: "Sustainability", href: "/sustainability" },
+      { name: "Careers", href: "/careers" },
+      { name: "Press", href: "/press" },
     ],
     Support: [
-      { name: "Contact", href: "#" },
-      { name: "Size Guide", href: "#" },
-      { name: "Care Instructions", href: "#" },
-      { name: "Shipping", href: "#" },
-      { name: "Returns", href: "#" },
+      { name: "Contact", href: "/contact" },
+      { name: "Size Guide", href: "/size-guide" },
+      { name: "Care Instructions", href: "/care-instructions" },
+      { name: "Shipping", href: "/shipping" },
+      { name: "Returns", href: "/returns" },
     ],
   }
 
@@ -37,11 +37,11 @@ export function Footer() {
 
   return (
     <footer className="bg-white/[0.02] border-t border-white/[0.02]">
-      <div className="container-custom py-16 lg:py-20">
+      <div className="container-custom py-12 sm:py-14 md:py-16 lg:py-20">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 mb-10 lg:mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 mb-8 lg:mb-0 flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export function Footer() {
                 Architected in Belgium, built to last. We create timeless furniture pieces in solid oak, steel, and
                 linen for spaces that breathe.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center lg:justify-start mt-4">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.name}
@@ -72,7 +72,7 @@ export function Footer() {
 
           {/* Links Sections */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
               {Object.entries(footerLinks).map(([category, links], index) => (
                 <motion.div
                   key={category}
@@ -81,13 +81,15 @@ export function Footer() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <h4 className="font-semibold text-neutral-900 mb-4">{category}</h4>
-                  <ul className="space-y-3">
+                  <h4 className="font-semibold text-neutral-900 mb-3 text-base sm:text-lg">{category}</h4>
+                  <ul className="space-y-2 sm:space-y-3">
                     {links.map((link) => (
                       <li key={link.name}>
                         <a
                           href={link.href}
-                          className="text-neutral-600 hover:text-neutral-900 transition-colors duration-200 group flex items-center"
+                          className="text-neutral-600 hover:text-neutral-900 transition-colors duration-200 group flex items-center text-sm sm:text-base py-1"
+                          tabIndex={0}
+                          aria-label={link.name}
                         >
                           {link.name}
                           <ArrowUpRight
@@ -106,25 +108,23 @@ export function Footer() {
 
         {/* Bottom Section */}
         <motion.div
-          className="pt-8 pb-4 border-t border-neutral-200 flex justify-center items-center"
+          className="pt-6 pb-3 border-t border-neutral-200 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-6 text-sm text-neutral-500 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-neutral-500 text-center">
-            <p>&copy; {currentYear} Gideon B. Studio. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Cookies
-              </a>
-            </div>
+          <p className="mb-2 sm:mb-0">&copy; {currentYear} Gideon B. Studio. All rights reserved.</p>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <a href="/privacy-policy" className="hover:text-neutral-700 transition-colors" tabIndex={0} aria-label="Privacy Policy">
+              Privacy Policy
+            </a>
+            <a href="/terms-of-service" className="hover:text-neutral-700 transition-colors" tabIndex={0} aria-label="Terms of Service">
+              Terms of Service
+            </a>
+            <a href="/cookies" className="hover:text-neutral-700 transition-colors" tabIndex={0} aria-label="Cookies">
+              Cookies
+            </a>
           </div>
         </motion.div>
       </div>

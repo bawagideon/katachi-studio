@@ -62,7 +62,7 @@ export function MaterialsSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="materials">
+  <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden" id="materials">
       <div className="absolute inset-0 z-0">
         {materials.map((material) => (
           <motion.div
@@ -84,8 +84,8 @@ export function MaterialsSection() {
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      <div className="absolute top-[120px] left-0 right-0 z-10">
-        <div className="container-custom text-white">
+      <div className="absolute top-[80px] sm:top-[120px] left-0 right-0 z-10">
+        <div className="container-custom text-white px-4 sm:px-6 md:px-8">
           <Reveal>
             <div>
               <AnimatePresence mode="wait">
@@ -95,12 +95,12 @@ export function MaterialsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="font-bold mb-6 text-7xl"
+                  className="font-bold mb-4 sm:mb-6 text-4xl sm:text-7xl"
                 >
                   <AnimatedText text={activeMaterialData.name} delay={0.2} />
                 </motion.h2>
               </AnimatePresence>
-              <p className="text-lg text-white/90 leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
                 Every piece begins with the finest materials, carefully selected for their beauty, durability, and
                 sustainable origins. Our craftspeople honor traditional techniques while embracing modern precision.
               </p>
@@ -121,10 +121,10 @@ export function MaterialsSection() {
         </Reveal>
       </div>
 
-      <div className="absolute bottom-8 left-0 right-0 z-10">
-        <div className="container-custom">
+      <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-10">
+        <div className="container-custom px-4 sm:px-6 md:px-8">
           <Reveal delay={0.1}>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {materials.map((material) => (
                 <motion.button
                   key={material.id}
